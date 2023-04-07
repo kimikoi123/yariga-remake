@@ -12,6 +12,31 @@ export const navigations = [
     {
         name: 'dashboard',
         title: 'Dashboard',
-        icon: <AiOutlineAppstore />
-    }
+        link: '/'
+    },
+    {
+        name: 'property',
+        title: 'Property',
+        link: '/property'
+    },
+    {
+        name: 'agent',
+        title: 'Agent',
+        link: '/agent'
+    },
+    {
+        name: 'review',
+        title: 'Review',
+        link: '/review'
+    },
+    {
+        name: 'message',
+        title: 'Message',
+        link: '/message'
+    },
+    {
+        name: 'my-profile',
+        title: 'My Profile',
+        link: '/my-profile'
+    },
 ]

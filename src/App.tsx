@@ -16,11 +16,17 @@ import { BiMessageDetail } from "react-icons/bi"
 import { CgProfile } from "react-icons/cg"
 import { Link } from "react-router-dom"
 import { useState } from 'react'
+import { navigations } from "./data/data"
+import NavLink from "./components/NavLink"
 
 
 
 function App() {
   const [active, setActive] = useState('dashboard')
+
+  function handleMenuClick(id: string) {
+    setActive(id)
+  }
 
   return (
     <main className="bg-gray-100">
@@ -31,42 +37,9 @@ function App() {
             <div>Yariga</div>
           </div>
           <div className="mt-5">
-            <Link to="/">
-              <div className="flex items-center px-3 py-2 rounded-lg gap-3 bg-[#475BE8] text-white">
-                <AiOutlineAppstore />
-                <div>Dashboard</div>
-              </div>
-            </Link>
-            <Link to="/property">
-              <div className="flex items-center px-3 py-2 rounded-lg gap-3">
-                <BsBuildings />
-                <div>Property</div>
-              </div>
-            </Link>
-            <Link to="/agent">
-              <div className="flex items-center px-3 py-2 rounded-lg gap-3">
-                <BsPeople />
-                <div>Agent</div>
-              </div>
-            </Link>
-            <Link to="/review">
-              <div className="flex items-center px-3 py-2 rounded-lg gap-3">
-                <AiOutlineStar />
-                <div>Review</div>
-              </div>
-            </Link>
-            <Link to="/message">
-              <div className="flex items-center px-3 py-2 rounded-lg gap-3">
-                <BiMessageDetail />
-                <div>Message</div>
-              </div>
-            </Link>
-            <Link to="/my-profile">
-              <div className="flex items-center px-3 py-2 rounded-lg gap-3">
-                <CgProfile />
-                <div>My Profile</div>
-              </div>
-            </Link>
+            {navigations.map(navigation => (
+              <NavLink key={navigation.name} active={active} handleMenuClick={handleMenuClick} {...navigation} />
+            ))}
           </div>
         </div>
         <div className="flex flex-col flex-1">
@@ -87,7 +60,7 @@ function App() {
               <img src="/src/assets/profile-01.png" alt="" />
               <div>
                 <div className="font-bold">Hawkins Maru</div>
-                <div>Company Manager</div>
+                <div className="text-gray-400">Company Manager</div>
               </div>
             </div>
           </div>
