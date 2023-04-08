@@ -1,10 +1,10 @@
 import { Routes, Route } from "react-router-dom"
-import Dashboard from "./pages/Dashboard"
-import Property from "./pages/Property"
-import Agent from "./pages/Agent"
-import Review from "./pages/Review"
-import Message from "./pages/Message"
-import MyProfile from "./pages/MyProfile"
+import Dashboard from "./pages/Dashboard/Dashboard"
+import Property from "./pages/Property/Property"
+import Agent from "./pages/Agent/Agent"
+import Review from "./pages/Review/Review"
+import Message from "./pages/Message/Message"
+import MyProfile from "./pages/MyProfile/MyProfile"
 import {
   AiOutlineSearch,
   AiOutlineBell,
@@ -15,14 +15,12 @@ import { BsBuildings, BsPeople } from "react-icons/bs"
 import { BiMessageDetail } from "react-icons/bi"
 import { CgProfile } from "react-icons/cg"
 import { Link } from "react-router-dom"
-import { useState } from 'react'
+import { useState } from "react"
 import { navigations } from "./data/data"
 import NavLink from "./components/NavLink"
 
-
-
 function App() {
-  const [active, setActive] = useState('dashboard')
+  const [active, setActive] = useState("dashboard")
 
   function handleMenuClick(id: string) {
     setActive(id)
@@ -30,15 +28,20 @@ function App() {
 
   return (
     <main className="bg-gray-100">
-      <header className="flex items-start">
-        <div className="max-w-[200px] p-4 bg-white">
-          <div className="font-bold flex items-center gap-3 max-w-[500px]">
+      <header className="flex items-stretch">
+        <div className="min-w-[200px] p-4 bg-white">
+          <div className="font-bold flex items-center gap-3">
             <img src="/src/assets/yariga-logo.svg" alt="" />
             <div>Yariga</div>
           </div>
           <div className="mt-5">
-            {navigations.map(navigation => (
-              <NavLink key={navigation.name} active={active} handleMenuClick={handleMenuClick} {...navigation} />
+            {navigations.map((navigation) => (
+              <NavLink
+                key={navigation.name}
+                active={active}
+                handleMenuClick={handleMenuClick}
+                {...navigation}
+              />
             ))}
           </div>
         </div>
