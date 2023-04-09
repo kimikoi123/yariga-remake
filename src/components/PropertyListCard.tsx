@@ -10,7 +10,7 @@ interface PropertyListCardProps {
 
 export default function PropertyListCard({ name, location, price, img }: PropertyListCardProps) {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col min-w-[400px]">
       <img
         className="h-[200px] w-[400px] object-cover object-center rounded-xl"
         src={img}

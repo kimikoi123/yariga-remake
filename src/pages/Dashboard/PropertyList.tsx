@@ -29,20 +29,40 @@ export default function PropertyList() {
           ))}
         </div>
       </div>
-      <div className="px-4 flex items-center gap-6">
-        <div className="flex gap-4">
-          {exampleProperties.map(property => (
+      {/* <div className="relative">
+        <div className="px-4 flex items-center gap-6">
+          <div className="absolute left-0 right-0 p-4 flex items-center justify-start overflow-x-auto scroll-smooth">
+            {exampleProperties.map((property) => (
+              <PropertyListCard key={property.name} {...property} />
+            ))}
+          </div>
+          <div className="flex flex-col gap-2">
+            <div className="text-3xl rounded-full p-2 shadow-lg cursor-pointer">
+              <FiChevronLeft />
+            </div>
+            <div className="text-3xl rounded-full p-2 shadow-lg cursor-pointer">
+              <FiChevronRight />
+            </div>
+          </div>
+        </div>
+      </div> */}
+      <div className="relative">
+        <div
+          id="content"
+          className="absolute left-0 right-0 p-4 flex items-center justify-start overflow-x-auto scroll-smooth gap-5 px-5"
+        >
+          {exampleProperties.map((property) => (
             <PropertyListCard key={property.name} {...property} />
           ))}
         </div>
-        <div className="flex flex-col gap-2">
-          <div className="text-3xl rounded-full p-2 shadow-lg cursor-pointer" >
-            <FiChevronLeft  />
+        {/* <div className="flex flex-col gap-2">
+          <div className="text-3xl rounded-full p-2 shadow-lg cursor-pointer">
+            <FiChevronLeft />
           </div>
           <div className="text-3xl rounded-full p-2 shadow-lg cursor-pointer">
             <FiChevronRight />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )
