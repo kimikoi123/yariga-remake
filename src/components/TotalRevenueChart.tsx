@@ -2,9 +2,23 @@
 
 import ReactApexChart from "react-apexcharts"
 import { ApexOptions } from "apexcharts"
+import { useState, useEffect } from 'react'
 
 
 export default function TotalRevenueChart() {
+  const [currentWindowWidth, setCurrentWindowWidth] = useState(window.innerWidth)
+
+  useEffect(() => {
+    addEventListener('resize', () => {
+      setCurrentWindowWidth(window.innerWidth)
+    })
+    return () => {
+      removeEventListener('resize', () => {
+        setCurrentWindowWidth(window.innerWidth)
+      })
+    } 
+  }, [])
+
     const options: ApexOptions = {
         chart: {
           type: 'bar',
@@ -54,12 +68,20 @@ export default function TotalRevenueChart() {
         data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
       }]
 
+      const series2 = [{
+        name: 'Last Month',
+        data: [76, 85, 101, 98]
+      }, {
+        name: 'Running',
+        data: [44, 55, 57, 56]
+      }]
+
 
 
 
   return (
     <div>
-        <ReactApexChart options={options} series={series} type="bar" height={380}/>
+        <ReactApexChart options={options} series={currentWindowWidth < 1024 ? series2 : series } type="bar" height={380}/>
     </div>
   )
 }
