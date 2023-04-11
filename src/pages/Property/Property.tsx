@@ -35,7 +35,7 @@ export default function Property() {
       <div className="bg-white rounded-3xl p-5">
         <div className="flex gap-4 items-center">
           <div className="flex gap-2 bg-gray-100 w-72 p-2 rounded-lg">
-            <img src="/src/assets/magnifying-icon.svg" alt="" />
+            <img src="magnifying-icon.svg" alt="" />
             <input
               className="bg-transparent w-72 outline-none"
               type="text"
@@ -47,7 +47,7 @@ export default function Property() {
             onClick={() => handleActiveAnyStatusChange()}
             className="flex items-center justify-between cursor-pointer">
               <div>Any Status</div>
-              <img src="/src/assets/chevron-down.svg" alt="" />
+              <img src="chevron-down.svg" alt="" />
             </div>
             <div className={`${isActiveAnyStatus ? 'block' : 'hidden'} absolute left-0 right-0 bottom-0 z-10 translate-y-full bg-white rounded-lg`}>
               <div className="bg-[#475BE8] p-2 rounded-lg text-white">
@@ -62,7 +62,7 @@ export default function Property() {
             onClick={() => handleActiveAnyTypeChange()}
             className="flex items-center justify-between cursor-pointer">
               <div>Any Type</div>
-              <img src="/src/assets/chevron-down.svg" alt="" />
+              <img src="chevron-down.svg" alt="" />
             </div>
             <div className={`${isActiveAnyType ? 'block' : 'hidden'} absolute left-0 right-0 bottom-0 z-10 translate-y-full bg-white rounded-lg`}>
               <div className="bg-[#475BE8] p-2 rounded-lg text-white">
@@ -77,14 +77,14 @@ export default function Property() {
           </div>
           <div className="flex items-center justify-between w-44 bg-gray-100 p-2 rounded-lg">
             <div>All Countries</div>
-            <img src="/src/assets/chevron-down.svg" alt="" />
+            <img src="chevron-down.svg" alt="" />
           </div>
           <div className="flex items-center justify-between w-44 bg-gray-100 p-2 rounded-lg">
             <div>Any States</div>
-            <img src="/src/assets/chevron-down.svg" alt="" />
+            <img src="chevron-down.svg" alt="" />
           </div>
           <div className="flex py-2 px-4 rounded-lg gap-3 bg-gray-100">
-            <img src="/src/assets/tuner-icon.svg" alt="" />
+            <img src="tuner-icon.svg" alt="" />
             <div>More</div>
           </div>
         </div>
@@ -111,7 +111,7 @@ export default function Property() {
           <div>Showing 1 to 10 Propertys</div>
           <div className="flex">
             <div className="w-12 h-12 grid place-items-center rounded-lg cursor-pointer">
-              <img src="src/assets/chevron-left.svg" alt="" />
+              <img src="chevron-left.svg" alt="" />
             </div>
 
             <div className="w-12 h-12 grid place-items-center rounded-lg cursor-pointer bg-[#475BE8] text-white">
@@ -130,7 +130,7 @@ export default function Property() {
               5
             </div>
             <div className="w-12 h-12 grid place-items-center rounded-lg cursor-pointer">
-              <img className="" src="src/assets/chevron-right.svg" alt="" />
+              <img className="" src="chevron-right.svg" alt="" />
             </div>
           </div>
         </div>

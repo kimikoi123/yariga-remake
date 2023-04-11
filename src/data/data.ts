@@ -102,56 +102,56 @@ export const exampleProperties = [
         name: 'Star Sun Hotel & Apartment',
         location: 'North Carolina, USA',
         price: 500,
-        img: '/src/assets/property-01.png',
+        img: 'property-01.png',
         sales: 35
     },
     {
         name: 'Letdo Ji Hotel & Apartment',
         location: 'New York City, USA',
         price: 500,
-        img: '/src/assets/property-02.png',
+        img: 'property-02.png',
         sales: 40
     },
     {
         name: 'Metro Jayakar Apartment',
         location: 'North Carolina, USA',
         price: 500,
-        img: '/src/assets/property-03.png',
+        img: 'property-03.png',
         sales: 50
     },
     {
         name: 'Property 4',
         location: 'North Carolina, USA',
         price: 500,
-        img: '/src/assets/property-01.png',
+        img: 'property-01.png',
         sales: 35
     },
     {
         name: 'Property 65',
         location: 'North Carolina, USA',
         price: 500,
-        img: '/src/assets/property-02.png',
+        img: 'property-02.png',
         sales: 50
     },
     {
         name: 'Property 65',
         location: 'North Carolina, USA',
         price: 500,
-        img: '/src/assets/property-02.png',
+        img: 'property-02.png',
         sales: 50
     },
     {
         name: 'Property 65',
         location: 'North Carolina, USA',
         price: 500,
-        img: '/src/assets/property-02.png',
+        img: 'property-02.png',
         sales: 50
     },
     {
         name: 'Property 65',
         location: 'North Carolina, USA',
         price: 500,
-        img: '/src/assets/property-02.png',
+        img: 'property-02.png',
         sales: 50
     },
 ]
@@ -160,42 +160,42 @@ export const exampleProperties = [
 export const topAgentData = [
     {
         name: 'Benny Chagur',
-        image: '/src/assets/top-agent-01.png'
+        image: 'top-agent-01.png'
     },
     {
         name: 'Chynita Heree',
-        image: '/src/assets/top-agent-02.png'
+        image: 'top-agent-02.png'
     },
     {
         name: 'David Yers',
-        image: '/src/assets/top-agent-03.png'
+        image: 'top-agent-03.png'
     },
     {
         name: 'Hayder Jahid',
-        image: '/src/assets/top-agent-04.png'
+        image: 'top-agent-04.png'
     },
     {
         name: 'Benny Chagur',
-        image: '/src/assets/top-agent-01.png'
+        image: 'top-agent-01.png'
     },
 ]
 
 export const exampleNotifData = [
     {
         name: 'Payment Success',
-        icon: '/src/assets/payment-success-icon.svg',
+        icon: 'payment-success-icon.svg',
         message: 'Your success an order payment from star sun appartment in the amount of $320',
         duration: '10 minutes'
     },
     {
         name: 'Update Apps',
-        icon: '/src/assets/update-apps-icon.svg',
+        icon: 'update-apps-icon.svg',
         message: 'The Apps application has made updates to improve services',
         duration: '1 Jan'
     },
     {
         name: 'Booking Success',
-        icon: '/src/assets/booking-success-icon.svg',
+        icon: 'booking-success-icon.svg',
         message: 'You completed the order from star sun hotel and Appartment',
         duration: '16 Sep'
     },

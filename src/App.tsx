@@ -61,7 +61,7 @@ function App() {
         <div className={`${isOpenOffCanvas ? 'block' : 'hidden'} lg:block min-w-[200px] bg-white`}>
           <div className="fixed p-4">
             <div className="font-bold flex items-center gap-3">
-              <img src="/src/assets/yariga-logo.svg" alt="" />
+              <img src="yariga-logo.svg" alt="" />
               <div>Yariga</div>
             </div>
             <div className="mt-5">
@@ -81,7 +81,7 @@ function App() {
             <div className="flex gap-4 lg:gap-2 items-center lg:bg-gray-100 px-3 py-1 rounded-lg lg:w-[400px]">
               <img 
               onClick={() => handleOffCanvas()}
-              className="block text-gray-400 cursor-pointer lg:hidden" src="/src/assets/hamburger-icon.svg" alt="" />
+              className="block text-gray-400 cursor-pointer lg:hidden" src="hamburger-icon.svg" alt="" />
               <AiOutlineSearch className="text-gray-400 text-2xl cursor-pointer lg:cursor-default" />
               <input
                 className="hidden lg:block bg-transparent outline-none flex-1"
@@ -100,7 +100,7 @@ function App() {
                   onClick={() => handleProfileDropDownClick()}
                   className="flex gap-2 items-center cursor-pointer"
                 >
-                  <img src="/src/assets/profile-01.png" alt="" />
+                  <img src="profile-01.png" alt="" />
                   <div className="hidden lg:block">
                     <div className="font-bold">Hawkins Maru</div>
                     <div className="text-gray-400">Company Manager</div>
@@ -112,19 +112,19 @@ function App() {
                   } absolute -left-44 lg:left-0 right-0 -bottom-5 z-10 translate-y-full bg-white p-5 rounded-lg flex flex-col gap-3 shadow-lg`}
                 >
                   <div className="flex gap-4 cursor-pointer">
-                    <img src="/src/assets/person-icon.svg" alt="" />
+                    <img src="person-icon.svg" alt="" />
                     <div>Edit Profile</div>
                   </div>
                   <div className="flex gap-4 cursor-pointer">
-                    <img src="/src/assets/settings-icon.svg" alt="" />
+                    <img src="settings-icon.svg" alt="" />
                     <div>Settings</div>
                   </div>
                   <div className="flex gap-4 cursor-pointer">
-                    <img src="/src/assets/logout-icon.svg" alt="" />
+                    <img src="logout-icon.svg" alt="" />
                     <div>Logout</div>
                   </div>
                   <div className="flex gap-4 cursor-pointer">
-                    <img src="/src/assets/darkmode-icon.svg" alt="" />
+                    <img src="darkmode-icon.svg" alt="" />
                     <div>Dark Mode</div>
                   </div>
                 </div>

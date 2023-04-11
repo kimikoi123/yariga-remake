@@ -24,7 +24,7 @@ export default function Agent() {
           <div>Showing 1 to 10 Name</div>
           <div className="flex">
             <div className="w-12 h-12 grid place-items-center rounded-lg cursor-pointer">
-              <img src="src/assets/chevron-left.svg" alt="" />
+              <img src="chevron-left.svg" alt="" />
             </div>
 
             <div className="w-12 h-12 grid place-items-center rounded-lg cursor-pointer bg-[#475BE8] text-white">
@@ -43,7 +43,7 @@ export default function Agent() {
               5
             </div>
             <div className="w-12 h-12 grid place-items-center rounded-lg cursor-pointer">
-              <img className="" src="src/assets/chevron-right.svg" alt="" />
+              <img className="" src="chevron-right.svg" alt="" />
             </div>
           </div>
         </div>

@@ -14,7 +14,7 @@ export default function Customer() {
                     <div className="text-3xl">5007k</div>
                     <div className="text-[#2ED480] font-bold">21.77%</div>
                 </div>
-                <img src="/src/assets/frame-01.png" alt="frame" />
+                <img src="frame-01.png" alt="frame" />
             </div>
         </div>
         <div className="flex flex-col gap-4 pb-7 pt-5">
@@ -24,7 +24,7 @@ export default function Customer() {
                     <div className="text-3xl">12k</div>
                     <div className="text-[#2ED480] font-bold">21.77%</div>
                 </div>
-                <img src="/src/assets/frame-02.png" alt="frame" />
+                <img src="frame-02.png" alt="frame" />
             </div>
         </div>
     </div>
