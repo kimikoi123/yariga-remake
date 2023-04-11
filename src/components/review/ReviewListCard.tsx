@@ -5,7 +5,7 @@ export default function ReviewListCard() {
     <div className="bg-white p-4 flex gap-5 rounded-lg">
             <img
               className="w-20 h-20 rounded-2xl object-cover object-center"
-              src="random.jpg"
+              src="person-01.png"
               alt=""
             />
             <div className="">

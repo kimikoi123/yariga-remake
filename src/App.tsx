@@ -10,6 +10,7 @@ import { useState } from "react"
 import { exampleNotifData, navigations } from "./data/data"
 import NavLink from "./components/app/NavLink"
 import NotificationItemComponent from "./components/app/NotificationItemComponent"
+import PropertyDetails from "./pages/Dashboard/Details/PropertyDetails"
 
 
 function App() {
@@ -144,6 +145,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/property" element={<Property />} />
+              <Route path="/property/details" element={<PropertyDetails />} />
               <Route path="/agent" element={<Agent />} />
               <Route path="/review" element={<Review />} />
               <Route path="/message" element={<Message />} />
