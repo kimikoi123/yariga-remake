@@ -1,13 +1,18 @@
-import { currencyFormatter } from "../utils/formatter"
+import { currencyFormatter } from "../../utils/formatter"
 
 interface LatestSalesComponent {
-    img: string
-    name: string
-    sales: number
-    location: string
+  img: string
+  name: string
+  sales: number
+  location: string
 }
 
-export default function LatestSalesComponent({ img, name, sales, location }: LatestSalesComponent) {
+export default function LatestSalesComponent({
+  img,
+  name,
+  sales,
+  location,
+}: LatestSalesComponent) {
   return (
     <div className="flex justify-between items-center gap-3">
       <img
@@ -19,7 +24,9 @@ export default function LatestSalesComponent({ img, name, sales, location }: Lat
         <div className="font-bold text-lg">{name}</div>
         <div className="text-gray-400">{location}</div>
       </div>
-      <div className="text-[#2F80ED] text-2xl">+{currencyFormatter(sales).split('.')[0]}</div>
+      <div className="text-[#2F80ED] text-2xl">
+        +{currencyFormatter(sales).split(".")[0]}
+      </div>
     </div>
   )
 }

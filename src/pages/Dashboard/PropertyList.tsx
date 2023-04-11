@@ -2,7 +2,7 @@ import { IoIosArrowDown } from "react-icons/io"
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi"
 import { useState } from "react"
 import { exampleProperties } from "../../data/data"
-import PropertyListCard from "../../components/PropertyListCard"
+import PropertyListCard from "../../components/dashboard/PropertyListCard"
 
 export default function PropertyList() {
   const [activeButton, setActiveButton] = useState("Popular")
@@ -17,8 +17,6 @@ export default function PropertyList() {
   function handleActiveButton(name: string) {
     setActiveButton(name)
   }
-
-
 
   return (
     <div className="bg-white rounded-3xl pb-4">

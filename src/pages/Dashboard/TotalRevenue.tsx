@@ -1,6 +1,6 @@
 import { BiDotsHorizontalRounded } from "react-icons/bi"
 import { BsFillArrowUpCircleFill } from "react-icons/bs"
-import TotalRevenueChart from "../../components/TotalRevenueChart"
+import TotalRevenueChart from "../../components/dashboard/TotalRevenueChart"
 
 export default function TotalRevenue() {
   return (

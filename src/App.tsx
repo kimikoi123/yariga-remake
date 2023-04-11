@@ -8,8 +8,8 @@ import MyProfile from "./pages/MyProfile/MyProfile"
 import { AiOutlineSearch, AiOutlineBell } from "react-icons/ai"
 import { useState } from "react"
 import { exampleNotifData, navigations } from "./data/data"
-import NavLink from "./components/NavLink"
-import NotificationItemComponent from "./components/NotificationItemComponent"
+import NavLink from "./components/app/NavLink"
+import NotificationItemComponent from "./components/app/NotificationItemComponent"
 
 
 function App() {
@@ -109,7 +109,7 @@ function App() {
                 <div
                   className={`${
                     profileDropDown ? "" : "hidden"
-                  } absolute left-0 right-0 -bottom-5 z-10 translate-y-full bg-white p-5 rounded-lg flex flex-col gap-3 shadow-lg`}
+                  } absolute -left-44 lg:left-0 right-0 -bottom-5 z-10 translate-y-full bg-white p-5 rounded-lg flex flex-col gap-3 shadow-lg`}
                 >
                   <div className="flex gap-4 cursor-pointer">
                     <img src="/src/assets/person-icon.svg" alt="" />
@@ -131,7 +131,7 @@ function App() {
                 <div
                   className={`${
                     notifDropDown ? "" : "hidden"
-                  } absolute min-w-[500px] right-0 -bottom-5 z-10 translate-y-full bg-white p-5 rounded-lg shadow-lg flex flex-col gap-3`}
+                  } absolute min-w-[360px] lg:min-w-[500px] right-0 -bottom-5 z-10 translate-y-full bg-white p-5 rounded-lg shadow-lg flex flex-col gap-3`}
                 >
                   {exampleNotifData.map((data,index) => (
                     <NotificationItemComponent key={index} {...data} />

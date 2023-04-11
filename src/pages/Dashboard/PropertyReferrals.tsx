@@ -1,5 +1,5 @@
 
-import PropertyReferralsBar from "../../components/PropertyReferralsBar"
+import PropertyReferralsBar from "../../components/dashboard/PropertyReferralsBar"
 import { propertyReferralsData } from "../../data/data"
 
 

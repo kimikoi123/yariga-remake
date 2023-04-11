@@ -1,4 +1,4 @@
-import TopAgentComponent from "../../components/TopAgentComponent";
+import TopAgentComponent from "../../components/dashboard/TopAgentComponent";
 import { topAgentData } from "../../data/data";
 
 

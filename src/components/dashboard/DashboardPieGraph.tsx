@@ -1,17 +1,19 @@
-
 import ReactApexChart from "react-apexcharts"
-import { normalFormatter } from "../utils/formatter"
+import { normalFormatter } from "../../utils/formatter"
 import { ApexOptions } from "apexcharts"
 
 interface DashboardPieGraphProps {
-    title: string
-    amount: number
-    color: string
+  title: string
+  amount: number
+  color: string
 }
 
-export default function DashboardPieGraph({ title, amount, color } : DashboardPieGraphProps) {
-
-  const options: ApexOptions =  {
+export default function DashboardPieGraph({
+  title,
+  amount,
+  color,
+}: DashboardPieGraphProps) {
+  const options: ApexOptions = {
     chart: {
       type: "radialBar",
     },

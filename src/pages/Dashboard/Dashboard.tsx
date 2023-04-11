@@ -1,4 +1,4 @@
-import DashboardPieGraph from "../../components/DashboardPieGraph"
+import DashboardPieGraph from "../../components/dashboard/DashboardPieGraph"
 import { dashboardPieData } from "../../data/data"
 import LatestSales from "./LatestSales"
 import PropertyList from "./PropertyList"

@@ -1,14 +1,19 @@
-import { MdLocationOn } from 'react-icons/md'
-import { currencyFormatter } from '../utils/formatter'
+import { MdLocationOn } from "react-icons/md"
+import { currencyFormatter } from "../../utils/formatter"
 
 interface PropertyListCardProps {
-    name: string
-    location: string
-    price: number
-    img: string
+  name: string
+  location: string
+  price: number
+  img: string
 }
 
-export default function PropertyListCard({ name, location, price, img }: PropertyListCardProps) {
+export default function PropertyListCard({
+  name,
+  location,
+  price,
+  img,
+}: PropertyListCardProps) {
   return (
     <div className="flex flex-col w-100 lg:min-w-[400px]">
       <img
