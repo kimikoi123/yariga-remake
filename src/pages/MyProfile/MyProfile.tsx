@@ -7,7 +7,7 @@ export default function MyProfile() {
       <div className="text-3xl font-bold pb-5 pt-2">My Profile</div>
       <div className="rounded-2xl flex flex-col gap-5">
         <div className="flex gap-16 items-center bg-white rounded-3xl">
-          <div className="bg-[url('random.jpg')] w-[300px] h-[300px] bg-cover rounded-l-3xl p-5 relative flex flex-col justify-end items-start">
+          <div className="w-[300px] h-[300px] bg-cover rounded-l-3xl p-5 relative flex flex-col justify-end items-start" style={{ backgroundImage: "url('random.jpg')"}}>
             <div className="flex bg-gray-100 p-3 rounded-lg">
               <img src="camera-icon.svg" alt="" />
               <div>Change Photo</div>
