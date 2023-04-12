@@ -5,12 +5,13 @@ import Agent from "./pages/Agent/Agent"
 import Review from "./pages/Review/Review"
 import Message from "./pages/Message/Message"
 import MyProfile from "./pages/MyProfile/MyProfile"
-import { AiOutlineSearch, AiOutlineBell } from "react-icons/ai"
+import { AiOutlineSearch, AiOutlineBell, AiOutlineClose } from "react-icons/ai"
 import { useState } from "react"
 import { exampleNotifData, navigations } from "./data/data"
 import NavLink from "./components/app/NavLink"
 import NotificationItemComponent from "./components/app/NotificationItemComponent"
-import PropertyDetails from "./pages/Dashboard/Details/PropertyDetails"
+import PropertyDetails from "./pages/Property/Details/PropertyDetails"
+
 
 
 function App() {
@@ -38,7 +39,6 @@ function App() {
       setNotifDropDown(false)
       setProfileDropDown(true)
     }
-
   }
 
   function handleMenuClick(id: string) {
@@ -53,17 +53,21 @@ function App() {
     if (!isOpenOffCanvas) {
       setIsOpenOffCanvas(true)
     }
-    
   }
 
   return (
-    <main className="bg-gray-100">
-      <header className="flex items-stretch">
-        <div className={`${isOpenOffCanvas ? 'block' : 'hidden'} lg:block min-w-[200px] bg-white`}>
-          <div className="fixed p-4">
-            <div className="font-bold flex items-center gap-3">
-              <img src="yariga-logo.svg" alt="" />
-              <div>Yariga</div>
+    <main className="bg-gray-100 ">
+      <header className="flex items-stretch relative">
+        <div
+          className={`${isOpenOffCanvas ? 'translate-x-0' : '-translate-x-full'} lg:static min-w-[200px] bg-white lg:translate-x-0 fixed top-0 left-0 z-40 h-screen lg:h-auto overflow-y-auto transition-transform shadow-lg lg:shadow-none`}
+        >
+          <div className="p-4">
+            <div className="flex items-center justify-between">
+              <div className="font-bold flex items-center gap-3">
+                <img src="yariga-logo.svg" alt="" />
+                <div>Yariga</div>
+              </div>
+              <AiOutlineClose className="cursor-pointer lg:hidden" onClick={() => setIsOpenOffCanvas(false)} />
             </div>
             <div className="mt-5">
               {navigations.map((navigation) => (
@@ -80,9 +84,12 @@ function App() {
         <div className="flex flex-col flex-1">
           <div className="flex justify-between p-4 bg-white">
             <div className="flex gap-4 lg:gap-2 items-center lg:bg-gray-100 px-3 py-1 rounded-lg lg:w-[400px]">
-              <img 
-              onClick={() => handleOffCanvas()}
-              className="block text-gray-400 cursor-pointer lg:hidden" src="hamburger-icon.svg" alt="" />
+              <img
+                onClick={() => handleOffCanvas()}
+                className="block text-gray-400 cursor-pointer lg:hidden"
+                src="hamburger-icon.svg"
+                alt=""
+              />
               <AiOutlineSearch className="text-gray-400 text-2xl cursor-pointer lg:cursor-default" />
               <input
                 className="hidden lg:block bg-transparent outline-none flex-1"
@@ -93,8 +100,9 @@ function App() {
             <div className="flex items-center gap-2">
               <div className="relative before:content-[''] before:bg-red-600 before:w-1 before:h-1 before:rounded-full before:absolute before:top-[4px] before:right-[8px]">
                 <AiOutlineBell
-                onClick={() => handleNotifDropDownClick()}
-                className="text-gray-500 text-2xl mr-1 cursor-pointer" />
+                  onClick={() => handleNotifDropDownClick()}
+                  className="text-gray-500 text-2xl mr-1 cursor-pointer"
+                />
               </div>
               <div className="relative">
                 <div
@@ -134,7 +142,7 @@ function App() {
                     notifDropDown ? "" : "hidden"
                   } absolute min-w-[360px] lg:min-w-[500px] right-0 -bottom-5 z-10 translate-y-full bg-white p-5 rounded-lg shadow-lg flex flex-col gap-3`}
                 >
-                  {exampleNotifData.map((data,index) => (
+                  {exampleNotifData.map((data, index) => (
                     <NotificationItemComponent key={index} {...data} />
                   ))}
                 </div>

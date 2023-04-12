@@ -36,15 +36,15 @@ export default function Property() {
       </div>
       <div className="bg-white rounded-3xl p-5">
         <div className="flex gap-4 items-center flex-wrap">
-          <div className="flex gap-2 bg-gray-100 w-72 p-2 rounded-lg">
+          <div className="flex gap-2 bg-gray-100 w-32 sm:w-44 p-2 rounded-lg">
             <img src="magnifying-icon.svg" alt="" />
             <input
-              className="bg-transparent w-72 outline-none"
+              className="bg-transparent outline-none w-20 sm:w-32"
               type="text"
-              placeholder="Enter an address, city or Zip code"
+              placeholder="Search"
             />
           </div>
-          <div className="w-44 bg-gray-100 p-2 rounded-lg  relative">
+          <div className="w-32 sm:w-44 bg-gray-100 p-2 rounded-lg  relative">
             <div 
             onClick={() => handleActiveAnyStatusChange()}
             className="flex items-center justify-between cursor-pointer">
@@ -60,7 +60,7 @@ export default function Property() {
               ))}
             </div>
           </div>
-          <div className="w-44 bg-gray-100 p-2 rounded-lg  relative">
+          <div className="w-32 sm:w-44 bg-gray-100 p-2 rounded-lg  relative">
             <div 
             onClick={() => handleActiveAnyTypeChange()}
             className="flex items-center justify-between cursor-pointer">
@@ -76,11 +76,11 @@ export default function Property() {
               ))}
             </div>
           </div>
-          <div className="flex items-center justify-between w-44 bg-gray-100 p-2 rounded-lg cursor-pointer">
+          <div className="flex items-center justify-between w-32 sm:w-44 bg-gray-100 p-2 rounded-lg cursor-pointer">
             <div>All Countries</div>
             <img src="chevron-down.svg" alt="" />
           </div>
-          <div className="flex items-center justify-between w-44 bg-gray-100 p-2 rounded-lg cursor-pointer">
+          <div className="flex items-center justify-between w-32 sm:w-44 bg-gray-100 p-2 rounded-lg cursor-pointer">
             <div>Any States</div>
             <img src="chevron-down.svg" alt="" />
           </div>
@@ -104,7 +104,7 @@ export default function Property() {
           <PropertyListComponent />
         </div>
 
-        <div className="flex justify-between mt-5 items-center">
+        <div className="flex flex-col gap-4 lg:gap-0 lg:flex-row justify-between mt-5 items-center">
           <div className="text-gray-400">Showing 1 to 10 Properties</div>
           <div className="flex">
             <div className="w-12 h-12 grid place-items-center rounded-lg cursor-pointer">
@@ -119,12 +119,6 @@ export default function Property() {
             </div>
             <div className="w-12 h-12 grid place-items-center rounded-lg cursor-pointer">
               3
-            </div>
-            <div className="w-12 h-12 grid place-items-center rounded-lg cursor-pointer">
-              4
-            </div>
-            <div className="w-12 h-12 grid place-items-center rounded-lg cursor-pointer">
-              5
             </div>
             <div className="w-12 h-12 grid place-items-center rounded-lg cursor-pointer">
               <img className="" src="chevron-right.svg" alt="" />
