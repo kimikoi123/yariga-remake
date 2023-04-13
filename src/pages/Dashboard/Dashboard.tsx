@@ -9,7 +9,7 @@ import Customer from "./Customer"
 
 export default function Dashboard() {
   return (
-    <section>
+    <section className="p-5">
       <div className="text-3xl font-bold pb-5 pt-2">Dashboard</div>
       <div className="flex flex-col gap-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">

@@ -6,11 +6,14 @@ import Review from "./pages/Review/Review"
 import Message from "./pages/Message/Message"
 import MyProfile from "./pages/MyProfile/MyProfile"
 import { AiOutlineSearch, AiOutlineBell, AiOutlineClose } from "react-icons/ai"
+import { GiHamburgerMenu } from 'react-icons/gi'
 import { useState } from "react"
 import { exampleNotifData, navigations } from "./data/data"
 import NavLink from "./components/app/NavLink"
 import NotificationItemComponent from "./components/app/NotificationItemComponent"
 import PropertyDetails from "./pages/Property/Details/PropertyDetails"
+import AgentDetails from "./pages/Agent/Details/AgentDetails"
+import AgentProfile from "./pages/Agent/Profile/AgentProfile"
 
 
 
@@ -64,7 +67,7 @@ function App() {
           <div className="p-4">
             <div className="flex items-center justify-between">
               <div className="font-bold flex items-center gap-3">
-                <img src="yariga-logo.svg" alt="" />
+                <img src="/yariga-logo.svg" alt="" />
                 <div>Yariga</div>
               </div>
               <AiOutlineClose className="cursor-pointer lg:hidden" onClick={() => setIsOpenOffCanvas(false)} />
@@ -84,12 +87,11 @@ function App() {
         <div className="flex flex-col flex-1">
           <div className="flex justify-between p-4 bg-white">
             <div className="flex gap-4 lg:gap-2 items-center lg:bg-gray-100 px-3 py-1 rounded-lg lg:w-[400px]">
-              <img
-                onClick={() => handleOffCanvas()}
-                className="block text-gray-400 cursor-pointer lg:hidden"
-                src="hamburger-icon.svg"
-                alt=""
+              <GiHamburgerMenu
+              onClick={() => handleOffCanvas()}
+              className="block text-gray-700 cursor-pointer lg:hidden"
               />
+
               <AiOutlineSearch className="text-gray-400 text-2xl cursor-pointer lg:cursor-default" />
               <input
                 className="hidden lg:block bg-transparent outline-none flex-1"
@@ -109,7 +111,7 @@ function App() {
                   onClick={() => handleProfileDropDownClick()}
                   className="flex gap-2 items-center cursor-pointer"
                 >
-                  <img src="profile-01.png" alt="" />
+                  <img src="/profile-01.png" alt="" />
                   <div className="hidden lg:block">
                     <div className="font-bold">Hawkins Maru</div>
                     <div className="text-gray-400">Company Manager</div>
@@ -121,19 +123,19 @@ function App() {
                   } absolute -left-44 lg:left-0 right-0 -bottom-5 z-10 translate-y-full bg-white p-5 rounded-lg flex flex-col gap-3 shadow-lg`}
                 >
                   <div className="flex gap-4 cursor-pointer">
-                    <img src="person-icon.svg" alt="" />
+                    <img src="/person-icon.svg" alt="" />
                     <div>Edit Profile</div>
                   </div>
                   <div className="flex gap-4 cursor-pointer">
-                    <img src="settings-icon.svg" alt="" />
+                    <img src="/settings-icon.svg" alt="" />
                     <div>Settings</div>
                   </div>
                   <div className="flex gap-4 cursor-pointer">
-                    <img src="logout-icon.svg" alt="" />
+                    <img src="/logout-icon.svg" alt="" />
                     <div>Logout</div>
                   </div>
                   <div className="flex gap-4 cursor-pointer">
-                    <img src="darkmode-icon.svg" alt="" />
+                    <img src="/darkmode-icon.svg" alt="" />
                     <div>Dark Mode</div>
                   </div>
                 </div>
@@ -149,12 +151,14 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="p-5 ">
+          <div className="">
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/property" element={<Property />} />
               <Route path="/property/details" element={<PropertyDetails />} />
               <Route path="/agent" element={<Agent />} />
+              <Route path="/agent/details" element={<AgentDetails />} />
+              <Route path="/agent/profile" element={<AgentProfile />} />
               <Route path="/review" element={<Review />} />
               <Route path="/message" element={<Message />} />
               <Route path="/my-profile" element={<MyProfile />} />

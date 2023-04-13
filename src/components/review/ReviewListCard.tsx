@@ -2,7 +2,7 @@
 
 export default function ReviewListCard() {
   return (
-    <div className="bg-white p-4 flex gap-5 rounded-lg">
+    <div className="bg-white p-4 flex gap-5 rounded-lg md:flex-row flex-col">
             <img
               className="w-20 h-20 rounded-2xl object-cover object-center"
               src="person-01.png"
@@ -33,15 +33,15 @@ export default function ReviewListCard() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-4 items-center">
+            <div className="flex flex-col gap-4 items-start md:items-center">
               <div className="flex gap-5 items-center">
                 <div className="font-bold text-xl">5.0</div>
                 <div className="flex gap-1">
-                  <img src="yellow-star-icon.svg" alt="" />
-                  <img src="yellow-star-icon.svg" alt="" />
-                  <img src="yellow-star-icon.svg" alt="" />
-                  <img src="yellow-star-icon.svg" alt="" />
-                  <img src="yellow-star-icon.svg" alt="" />
+                  <img src="/yellow-star-icon.svg" alt="" />
+                  <img src="/yellow-star-icon.svg" alt="" />
+                  <img src="/yellow-star-icon.svg" alt="" />
+                  <img src="/yellow-star-icon.svg" alt="" />
+                  <img src="/yellow-star-icon.svg" alt="" />
                 </div>
               </div>
               <div className="flex gap-3">
