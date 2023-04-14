@@ -1,26 +1,53 @@
-import { GoogleLogin, useGoogleLogin } from "@react-oauth/google"
-import { gapi } from 'gapi-script'
+import { useMainContext } from "../../contexts/MainContext"
+import { useGoogleLogin, googleLogout } from "@react-oauth/google"
 
-export default function SignIn({ handleLoginSuccess } : { handleLoginSuccess: () => void}) {
-    const login = useGoogleLogin({
-        onSuccess: async tokenResponse => {
-            const getUserProfileData = async (accessToken: string) => {
-                const headers = new Headers()
-                headers.append('Authorization', `Bearer ${accessToken}`)
-                const response = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
-                  headers
-                })
-                const data = await response.json();
-                return data;
-              }
 
-              console.log(await getUserProfileData(tokenResponse.access_token))
-              handleLoginSuccess()
-        },
-        onError: () => {
-            console.log('Login Failed');
-          },
-      });
+export default function SignIn() {
+  const { handleLoginSuccess, handleUpdateUserData } = useMainContext()
+
+  const login = useGoogleLogin({
+    onSuccess: async (tokenResponse) => {
+      const getUserProfileData = async (accessToken: string) => {
+        const headers = new Headers()
+        headers.append("Authorization", `Bearer ${accessToken}`)
+        const response = await fetch(
+          "https://www.googleapis.com/oauth2/v3/userinfo",
+          {
+            headers,
+          }
+        )
+        return await response.json()
+      }
+
+      const data = await getUserProfileData(tokenResponse.access_token)
+      const body = {
+        name: data.name,
+        email: data.email,
+        picture: data.picture,
+      }
+      
+      try {
+        const res = await fetch(
+          `${import.meta.env.VITE_SERVER_URL}/api/v1/users`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body),
+          }
+        )
+  
+        const userData = await res.json()
+        alert(userData.message)
+        handleUpdateUserData(body)
+        handleLoginSuccess()
+      } catch (err) {
+        console.error(err)
+      }
+    },
+    onError: () => {
+      console.log("Login Failed")
+    },
+  })
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2">

@@ -14,12 +14,15 @@ import NotificationItemComponent from "../components/app/NotificationItemCompone
 import PropertyDetails from "./Property/Details/PropertyDetails"
 import AgentDetails from "./Agent/Details/AgentDetails"
 import AgentProfile from "./Agent/Profile/AgentProfile"
+import AddProperty from "./Property/AddProperty/AddProperty"
+import { useMainContext } from "../contexts/MainContext"
 
 export default function Home() {
   const [active, setActive] = useState("dashboard")
   const [profileDropDown, setProfileDropDown] = useState(false)
   const [notifDropDown, setNotifDropDown] = useState(false)
   const [isOpenOffCanvas, setIsOpenOffCanvas] = useState(false)
+  const { userData, handleLogout } = useMainContext()
 
   function handleNotifDropDownClick() {
     if (notifDropDown) {
@@ -114,9 +117,9 @@ export default function Home() {
                   onClick={() => handleProfileDropDownClick()}
                   className="flex gap-2 items-center cursor-pointer"
                 >
-                  <img src="/profile-01.png" alt="" />
+                  <img className="w-[40px] h-[40px] object-cover object-center rounded-full" src={userData.picture} alt="" />
                   <div className="hidden lg:block">
-                    <div className="font-bold">Hawkins Maru</div>
+                    <div className="font-bold">{userData.name}</div>
                     <div className="text-gray-400">Company Manager</div>
                   </div>
                 </div>
@@ -133,7 +136,9 @@ export default function Home() {
                     <img src="/settings-icon.svg" alt="" />
                     <div>Settings</div>
                   </div>
-                  <div className="flex gap-4 cursor-pointer">
+                  <div 
+                  onClick={() => handleLogout()}
+                  className="flex gap-4 cursor-pointer">
                     <img src="/logout-icon.svg" alt="" />
                     <div>Logout</div>
                   </div>
@@ -159,6 +164,7 @@ export default function Home() {
               <Route path="/" element={<Dashboard />} />
               <Route path="/property" element={<Property />} />
               <Route path="/property/details" element={<PropertyDetails />} />
+              <Route path="/property/add-property" element={<AddProperty />} />
               <Route path="/agent" element={<Agent />} />
               <Route path="/agent/details" element={<AgentDetails />} />
               <Route path="/agent/profile" element={<AgentProfile />} />

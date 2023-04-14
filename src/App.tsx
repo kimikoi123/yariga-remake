@@ -1,20 +1,16 @@
 import Home from "./pages/Home"
 import SignIn from "./pages/SignIn/SignIn"
-import { useState } from 'react'
+import { useMainContext } from "./contexts/MainContext"
 
 
 
 function App() {
-  const [isSignIn, setIsSignIn] = useState(false)
+  const { isSignIn } = useMainContext()
 
-  function handleLoginSuccess() {
-    setIsSignIn(true)
-  }
 
   return (
     <>
-    {isSignIn ? <Home /> : <SignIn handleLoginSuccess={handleLoginSuccess} />}
-    
+    {isSignIn ? <Home /> : <SignIn />}
     </>
   )
 }

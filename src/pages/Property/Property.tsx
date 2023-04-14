@@ -1,11 +1,12 @@
 import PropertyListComponent from "../../components/property/PropertyListComponent"
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 export default function Property() {
   const [isActiveAnyStatus, setIsActiveAnyStatus] = useState(false)
   const [isActiveAnyType, setIsActiveAnyType] = useState(false)
-  const [selectedStatus, setSelectedStatus] = useState('Any Status')
-  const [selectedType, setSelectedType] = useState('Any Type')
+  const [selectedStatus, setSelectedStatus] = useState("Any Status")
+  const [selectedType, setSelectedType] = useState("Any Type")
 
   function handleActiveAnyStatusChange() {
     if (isActiveAnyStatus) {
@@ -21,18 +22,18 @@ export default function Property() {
     return setIsActiveAnyType(true)
   }
 
-
-
   return (
-    <section className='p-5'>
-      <div className="flex justify-between items-center">
-        <div className="text-3xl font-bold pb-5 pt-2">Property List</div>
-        <button
-          className="bg-primary rounded-lg text-white p-3"
-          type="button"
-        >
-          + Add Property
-        </button>
+    <section className="p-5">
+      <div className="flex justify-between items-center pb-5">
+        <div className="text-3xl font-bold pt-2">Property List</div>
+        <Link to="/property/add-property">
+          <button
+            className="bg-primary rounded-lg text-white p-3"
+            type="button"
+          >
+            + Add Property
+          </button>
+        </Link>
       </div>
       <div className="bg-white rounded-3xl p-5">
         <div className="flex gap-4 items-center flex-wrap">
@@ -45,34 +46,69 @@ export default function Property() {
             />
           </div>
           <div className="w-32 sm:w-44 bg-gray-100 p-2 rounded-lg  relative">
-            <div 
-            onClick={() => handleActiveAnyStatusChange()}
-            className="flex items-center justify-between cursor-pointer">
+            <div
+              onClick={() => handleActiveAnyStatusChange()}
+              className="flex items-center justify-between cursor-pointer"
+            >
               <div>{selectedStatus}</div>
               <img src="/chevron-down.svg" alt="" />
             </div>
-            <div className={`${isActiveAnyStatus ? 'block' : 'hidden'} absolute left-0 right-0 bottom-0 z-10 translate-y-full bg-white rounded-lg`}>
-              {['Any Status', 'For Sale', 'For Rent'].map((status, index) => (
-                <div key={index} onClick={() => {
-                  setSelectedStatus(status)
-                  setIsActiveAnyStatus(false)
-                }} className={`${selectedStatus === status ? 'bg-primary text-white' : 'bg-white'} p-2 rounded-lg`}>{status}</div>
+            <div
+              className={`${
+                isActiveAnyStatus ? "block" : "hidden"
+              } absolute left-0 right-0 bottom-0 z-10 translate-y-full bg-white rounded-lg`}
+            >
+              {["Any Status", "For Sale", "For Rent"].map((status, index) => (
+                <div
+                  key={index}
+                  onClick={() => {
+                    setSelectedStatus(status)
+                    setIsActiveAnyStatus(false)
+                  }}
+                  className={`${
+                    selectedStatus === status
+                      ? "bg-primary text-white"
+                      : "bg-white"
+                  } p-2 rounded-lg`}
+                >
+                  {status}
+                </div>
               ))}
             </div>
           </div>
           <div className="w-32 sm:w-44 bg-gray-100 p-2 rounded-lg  relative">
-            <div 
-            onClick={() => handleActiveAnyTypeChange()}
-            className="flex items-center justify-between cursor-pointer">
+            <div
+              onClick={() => handleActiveAnyTypeChange()}
+              className="flex items-center justify-between cursor-pointer"
+            >
               <div>{selectedType}</div>
               <img src="/chevron-down.svg" alt="" />
             </div>
-            <div className={`${isActiveAnyType ? 'block' : 'hidden'} absolute left-0 right-0 bottom-0 z-10 translate-y-full bg-white rounded-lg`}>
-            {['Any Type', 'Apartments', 'Houses', 'Commercial', 'Garages', 'Lots'].map((type, index) => (
-                <div key={index} onClick={() => {
-                  setSelectedType(type)
-                  setIsActiveAnyType(false)
-                }} className={`${selectedType === type? 'bg-primary text-white' : 'bg-white'} p-2 rounded-lg cursor-pointer`}>{type}</div>
+            <div
+              className={`${
+                isActiveAnyType ? "block" : "hidden"
+              } absolute left-0 right-0 bottom-0 z-10 translate-y-full bg-white rounded-lg`}
+            >
+              {[
+                "Any Type",
+                "Apartments",
+                "Houses",
+                "Commercial",
+                "Garages",
+                "Lots",
+              ].map((type, index) => (
+                <div
+                  key={index}
+                  onClick={() => {
+                    setSelectedType(type)
+                    setIsActiveAnyType(false)
+                  }}
+                  className={`${
+                    selectedType === type ? "bg-primary text-white" : "bg-white"
+                  } p-2 rounded-lg cursor-pointer`}
+                >
+                  {type}
+                </div>
               ))}
             </div>
           </div>
