@@ -84,6 +84,7 @@ export default function Home() {
                   key={navigation.name}
                   active={active}
                   handleMenuClick={handleMenuClick}
+                  handleOffCanvas={handleOffCanvas}
                   {...navigation}
                 />
               ))}

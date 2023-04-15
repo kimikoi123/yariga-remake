@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 export default function Agent() {
   return (
     <section className="p-0 md:p-5">
-      <div className="flex items-center justify-between p-5 md:p-0">
-        <div className="text-3xl font-bold pb-5 pt-2">Agent List</div>
+      <div className="flex items-center justify-between p-5 md:p-0 md:pb-5">
+        <div className="text-3xl font-bold pt-2">Agent List</div>
         <Link to="/agent/profile">
           <button
             className="bg-primary rounded-lg text-white p-3"

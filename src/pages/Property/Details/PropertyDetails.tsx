@@ -1,4 +1,4 @@
-import React from "react"
+import {useEffect} from "react"
 
 export default function PropertyDetails() {
   return (
@@ -10,27 +10,26 @@ export default function PropertyDetails() {
 
       <div className="grid grid-cols-12 gap-4">
         <div className="col-span-full md:col-span-8 flex flex-col gap-4">
-          <div className="grid grid-cols-8 gap-4">
+          <div className="grid grid-cols-8 grid-rows-2 h-[150px] sm:h-[250px] md:h-[400px] gap-4">
             <img
-              className="col-span-6 w-full max-h-[350px] object-cover object-center rounded-lg"
+              className="col-span-6 row-span-full h-full w-full object-cover object-center rounded-lg"
               src="/random.jpg"
               alt=""
             />
-            <div className="col-span-2 flex flex-col gap-4">
+            <div className="col-span-2 row-span-2 grid grid-rows-2 gap-4">
               <img
-                className="h-1/2 rounded-lg object-cover object-center"
+                className="rounded-lg row-span-1 h-full w-full object-cover object-center"
                 src="/random.jpg"
                 alt=""
               />
-              <div className="bg-black h-1/2 relative rounded-lg cursor-pointer">
+              <div className="rounded-lg h-full row-span-1 cursor-pointer relative">
                 <img
-                  className="h-full rounded-lg object-cover object-center"
+                  className="h-full w-full rounded-lg object-cover object-center"
                   src="/random.jpg"
                   alt=""
                 />
-                <div className="absolute inset-0 text-white grid place-items-center bg-[#00000050] rounded-lg">
-                  +10
-                </div>
+                <div className="absolute z-10 inset-0 grid place-items-center bg-[#00000050] rounded-lg" />
+                <div className="absolute z-20 inset-0 grid place-items-center text-white text-lg">+ 10</div>
               </div>
             </div>
           </div>
@@ -114,7 +113,7 @@ export default function PropertyDetails() {
         </div>
 
         <div className="col-span-full md:col-span-4 flex flex-col gap-4">
-          <div className="col-span-4 border p-5 flex flex-col gap-3 rounded-lg">
+          <div className="col-span-4 border p-5 flex flex-col gap-3 rounded-lg h-[400px]">
             <img
               className="ml-auto"
               src="/three-dot-horizontal-icon.svg"

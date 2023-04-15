@@ -14,13 +14,13 @@ export default function MyProfile() {
             </div>
             <img className="absolute md:translate-x-1/2 translate-y-1/2 md:translate-y-0 bottom-0 md:bottom-auto md:left-auto left-5 md:top-12 md:right-0 w-[80px] h-[80px]" src="profile-02.png" alt="" />
           </div>
-          <div className="flex-1 pr-5">
+          <div className="flex-1 p-5 md:pl-0 md:pr-5">
             <div className="flex justify-between">
               <div className="font-bold text-xl">Mr. Alvert Flore</div>
               <img className="hidden md:block" src="/three-dot-horizontal-icon.svg" alt="" />
             </div>
             <div className="text-gray-400 mt-2">Admin</div>
-            <div className="w-[500px] flex flex-col gap-5 mt-5 md:mb-0 mb-5">
+            <div className="w-full md:w-[500px] flex flex-col gap-5 mt-5 md:mb-0 mb-5">
               <div>
                 <div>Address</div>
                 <div className="flex gap-3 border p-2 rounded">

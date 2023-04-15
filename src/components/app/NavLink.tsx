@@ -10,11 +10,15 @@ interface NavLinkProps {
   link: string
   active: string
   handleMenuClick: (id: string) => void
+  handleOffCanvas: () => void
 }
 
-export default function NavLink({ name, title, link, active, handleMenuClick }: NavLinkProps) {
+export default function NavLink({ name, title, link, active, handleMenuClick, handleOffCanvas }: NavLinkProps) {
   return (
-    <Link to={link} onClick={() => handleMenuClick(name)}>
+    <Link to={link} onClick={() => {
+      handleMenuClick(name)
+      handleOffCanvas()
+      }}>
       <div className={`flex items-center px-3 py-2 rounded-lg gap-3 ${active === name ? 'bg-[#475BE8] text-white' : ''}`}>
         {name === "dashboard" && <AiOutlineAppstore />}
         {name === "property" && <BsBuildings />}

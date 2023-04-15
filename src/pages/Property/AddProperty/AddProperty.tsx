@@ -5,6 +5,8 @@ export default function AddProperty() {
   const [propertyName, setPropertyName] = useState("")
   const [propertyDescription, setPropertyDescription] = useState("")
   const [propertyType, setPropertyType] = useState("")
+  const [propertyStatus, setPropertyStatus] = useState("")
+  const [propertyCountry, setPropertyCountry] = useState("")
   const [propertyPrice, setPropertyPrice] = useState("")
   const [propertyLocation, setPropertyLocation] = useState("")
   const [propertyPhoto, setPropertyPhoto] = useState({ name: '', url: '' })
@@ -36,6 +38,8 @@ export default function AddProperty() {
         propertyLocation,
         propertyPhoto: propertyPhoto.url,
         userData,
+        propertyCountry,
+        propertyStatus
       }
       const response = await fetch(
         `${import.meta.env.VITE_SERVER_URL}/api/v1/properties`,
@@ -81,14 +85,12 @@ export default function AddProperty() {
               className="border rounded-lg px-2 py-3 outline-none "
               onChange={(e) => setPropertyType(e.target.value)}
             >
-              <option value="residential">Residential properties</option>
-              <option value="commercial">Commercial properties</option>
-              <option value="industrial">Industrial properties</option>
-              <option value="mixed-use">Mixed-use properties</option>
-              <option value="vacant">Vacant land</option>
-              <option value="special-purpose">
-                Special-purpose properties
-              </option>
+              <option value="">Select Type</option>
+              <option value="apartments">Apartments</option>
+              <option value="houses">Houses</option>
+              <option value="commercial">Commercial</option>
+              <option value="garages">Garages</option>
+              <option value="lots">Lots</option>
             </select>
           </div>
           <div className="flex flex-col col-span-full sm:col-span-2 gap-2">
@@ -107,6 +109,28 @@ export default function AddProperty() {
               type="text"
             />
           </div>
+          <div className="flex flex-col col-span-full sm:col-span-2 gap-2">
+            <label>Select Property Status</label>
+            <select
+              className="border rounded-lg px-2 py-3 outline-none "
+              onChange={(e) => setPropertyStatus(e.target.value)}
+            >
+              <option value="">Select Status</option>
+              <option value="for-sale">For Sale</option>
+              <option value="for-rent">For Rent</option>
+            </select>
+          </div>
+          <div className="flex flex-col col-span-full sm:col-span-4 gap-2">
+            <label>Select Country</label>
+            <select
+              className="border rounded-lg px-2 py-3 outline-none "
+              onChange={(e) => setPropertyCountry(e.target.value)}
+            >
+              <option value="">Select Country</option>
+              <option value="philippines">Philippines</option>
+              <option value="america">America</option>
+            </select>
+          </div>
           <div className="col-span-full flex flex-col gap-2">
             <div>Property Photo</div>
             <div className="flex flex-col col-span-full border rounded-lg py-5 hover:bg-[#00000020]">
@@ -117,9 +141,10 @@ export default function AddProperty() {
 
                 <div>Click to upload or drag and drop</div>
                 <div>SVG, PNG, JPG or GIF (max, 800x400px)</div>
+                <div className="text-primary">{propertyPhoto.name}</div>
                 <input
                   onChange={(e) => handleImageChange(e.target.files![0])}
-                  className=""
+                  className="hidden"
                   type="file"
                 />
               </label>
