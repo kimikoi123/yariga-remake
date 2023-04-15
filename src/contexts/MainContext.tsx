@@ -28,8 +28,8 @@ export function useMainContext() {
 export default function MainContextProvider({
   children,
 }: MainContextProviderProps) {
-  const [isSignIn, setIsSignIn] = useState(false)
-  const [userData, setUserData] = useState({} as UserDataProps)
+  const [isSignIn, setIsSignIn] = useState(true)
+  const [userData, setUserData] = useState({name: 'Test', email: 'test@email.com', picture: '/profile-01.png'} as UserDataProps)
 
   function handleLoginSuccess() {
     setIsSignIn(true)
