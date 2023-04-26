@@ -5,6 +5,7 @@ import { ApexOptions } from "apexcharts"
 import { useState, useEffect } from 'react'
 
 
+
 export default function TotalRevenueChart() {
   const [currentWindowWidth, setCurrentWindowWidth] = useState(window.innerWidth)
 

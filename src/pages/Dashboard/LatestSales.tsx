@@ -2,6 +2,7 @@ import { BsArrowRightShort } from "react-icons/bs"
 import LatestSalesComponent from "../../components/dashboard/LatestSalesComponent"
 import { exampleProperties } from "../../data/data"
 
+
 export default function LatestSales() {
   return (
     <div className="bg-white col-span-full lg:col-span-5 p-5 rounded-2xl">
